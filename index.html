@@ -15,7 +15,7 @@
                 <div class="panel-heading">TerraFirmaCraft Smithing Helper</div>
                 <div class="panel-body">
                     <div id="displays" class="row">
-                        <div class="col-md-8 col-sm-12"><input class="form-control" type="text" placeholder="（锻造路线）" v-model="route"/></div>
+                        <div class="col-md-8 col-sm-12"><input class="form-control" type="text" placeholder="（锻造路线）" readonly="readonly" v-model="route"/></div>
                         <div class="col-md-2 col-sm-6"><input placeholder="值" class="form-control" type="number" readonly="readonly" v-model="value"/></div>
                         <div class="col-md-2"><input class="form-control btn btn-toolbar" :class="{'btn-primary':mustreset}" type="button" value="清除" @click="reset"/></div>
                     </div>

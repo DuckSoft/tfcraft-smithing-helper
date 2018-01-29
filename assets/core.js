@@ -12,6 +12,7 @@ vue = new Vue({
         perform: function (op){
             this.value += op[1];
             this.route += op[0] + "→";
+            this.mustreset = true;
         },
         reset: function () {
             this.value = 0;
