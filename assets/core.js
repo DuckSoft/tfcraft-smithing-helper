@@ -12,7 +12,6 @@ vue = new Vue({
         perform: function (op){
             this.value += op[1];
             this.route += op[0] + "→";
-            this.mustreset = true;
         },
         reset: function () {
             this.value = 0;
@@ -20,6 +19,7 @@ vue = new Vue({
             this.mustreset = false;
         },
         autofill: function (target) {
+            this.mustreset = true;
             ops = this.operations.slice();
             while (true){
                 for (op in ops) {
