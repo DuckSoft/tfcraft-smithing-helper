@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TerraFirmaCraft Smithing Helper</title>
+    <link rel="stylesheet" href="assets/bootstrap.min.css"/>
+</head>
+<body>
+    <div id="app" class="container">
+        <div class="page-header">
+            <h1>TerraFirmaCraft Smithing Helper</h1>
+        </div>
+        <div class="col-md-7 col-sm-10 col-xs-12">
+            <div class="panel panel-primary">
+                <div class="panel-heading">TerraFirmaCraft Smithing Helper</div>
+                <div class="panel-body">
+                    <div id="displays" class="row">
+                        <div class="col-md-8 col-sm-12"><input class="form-control" type="text" placeholder="（锻造路线）" v-model="route"/></div>
+                        <div class="col-md-2 col-sm-6"><input placeholder="值" class="form-control" type="number" readonly="readonly" v-model="value"/></div>
+                        <div class="col-md-2"><input class="form-control btn btn-toolbar" :class="{'btn-primary':mustreset}" type="button" value="清除" @click="reset"/></div>
+                    </div>
+                    <br/>
+                    <div id="controls" class="row">
+                        <div class="col-md-3 col-sm-4 col-xs-6 " v-for="operation in operations">
+                            <button class="btn btn-lg center-block btn-block" @click="perform(operation)" :disabled="mustreset">{{operation[0]}}<br/>({{operation[1]}})</button>
+                        `   <br/>
+                        </div>
+                    </div>
+                    <div id="search" class="row">
+                        <button class="btn form-control" :class="{'btn-default':mustreset, 'btn-success':!mustreset}" @click="autofill(-value)">自动补完</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="assets/vue.min.js"></script>
+<script src="assets/core.js"></script>
+</html>
